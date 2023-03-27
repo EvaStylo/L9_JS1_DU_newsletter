@@ -7,9 +7,13 @@ const odebirat = (event) => {
 	event.preventDefault()
 	const input = document.querySelector('input')
 	const email = input.value
-	formular.textContent = `Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${email}.`
-}
 
+	if (textovepolicko.value === '' || !textovepolicko.value.includes('@')) {
+	formular.textContent = `Chybně zadaný e-mail, obnovte stránku a zadejte e-mail znovu.`
+	} else {	
+	formular.textContent = `Děkujeme za váš zájem. Těšte se na novinky ze světa frontendu a UX na vaší adrese ${email}.`
+	}
+}
 const kontrolaPolicka = (event) => {
 	if (textovepolicko.value === '' || !textovepolicko.value.includes('@')) {
 		textovepolicko.classList.add('alertInput')
